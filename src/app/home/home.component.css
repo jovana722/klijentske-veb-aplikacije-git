@@ -1,0 +1,4 @@
+img {
+    width: 300px;  /* širina slike */
+    height: auto;  /* visina se automatski prilagođava širini */
+}
