@@ -1,0 +1,86 @@
+.auth-card {
+    width: 100%;
+    max-width: 600px; /* Povećana širina kartice za prijavu */
+    margin: 50px auto;
+    background-color: #242728; /* Tamno siva pozadina kao pozadina stranice */
+    color: white;
+    padding: 40px;
+    border-radius: 8px;
+    border: 1px solid #000; /* Crne ivice */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Centering the header text */
+.mat-card-header {
+    text-align: center;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.mat-card-header h1 {
+    font-size: 28px;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* Form field styles */
+.mat-form-field {
+    width: 100%; /* Polja za unos zauzimaju celu širinu kartice */
+    margin-bottom: 20px; /* Razmak između polja */
+    background-color: transparent; /* Bez pozadine za inpute */
+    border-radius: 4px;
+    padding: 5px 0; /* Malo paddinga za bolji izgled */
+    display: block;
+}
+
+/* Input field styles */
+.inputclass {
+    width: 100%; /* Širina inputa je 100% širine kartice */
+    padding: 14px; /* Povećan padding za udobniji unos */
+    background-color: #333; /* Tamnija pozadina za unos */
+    color: white;
+    border: 1px solid #444; /* Blagi okvir oko inputa */
+    border-radius: 4px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.inputclass:focus {
+    background-color: #444; /* Promena boje pozadine kada je input fokusiran */
+    border-color: #007BFF; /* Promena boje ivice na plavu kada je fokus */
+}
+
+/* Button Styles */
+.mat-button {
+    background-color: #007BFF; /* Plavi dugme */
+    color: white;
+    width: 100%; /* Dugme na celoj širini kartice */
+    border-radius: 4px;
+    padding: 12px;
+    font-weight: bold;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.mat-button:hover {
+    background-color: #0056b3; /* Tamniji plavi kada se pređe preko */
+}
+
+/* Links styling */
+.mat-card-actions a {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.mat-card-actions a:hover {
+    text-decoration: underline;
+}
+
+/* Form layout */
+.mat-form-field-label {
+    color: white;
+}

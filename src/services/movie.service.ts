@@ -15,15 +15,21 @@ const client = axios.create({
 
 
 export class MovieService {
-  static async getMovies(genre = "", actor = ""): Promise<{ data: MovieModel[] }> {
+  static async getMovies(search = "", actor = ""): Promise<{ data: MovieModel[] }> {
     return client.request({
       url: '/movie',
       method: 'GET',
       params: {
         'createdAt': 'scheduledAt,asc',
         'actor': actor,
-        "genre": genre
+        "search": search
       }
     })
   }
+
+  static async getMovieById(movieId: number) {
+    return client.get(`/movie/${movieId}`);
+  }
+
+
 }

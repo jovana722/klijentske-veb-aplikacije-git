@@ -1,1 +1,59 @@
-<p>search works!</p>
+<div class="wrapper" *ngIf ="dataSource">
+    <h1>Movie List</h1>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+        
+        <ng-container matColumnDef="title">
+          <th mat-header-cell *matHeaderCellDef> 
+            <i class="fa-solid fa-clapperboard"></i>  Movie </th>
+          <td mat-cell *matCellDef="let element"> {{element.title}} </td>
+        </ng-container>
+      
+        
+        <ng-container matColumnDef="movieGenres">
+            <th mat-header-cell *matHeaderCellDef>
+                <i class="fa-solid fa-masks-theater" style="color: #ffffff;"></i> Genre </th>
+            <td mat-cell *matCellDef="let element">
+              <span *ngFor="let genre of element.movieGenres; let last = last">
+                {{ genre.genre.name }}<span *ngIf="!last">, </span>
+              </span>
+            </td>
+          </ng-container>
+        
+      
+        
+        <ng-container matColumnDef="startDate">
+          <th mat-header-cell *matHeaderCellDef>
+            <i class="fa-solid fa-calendar-days" style="color: #ffffff;"></i> Release Date </th>
+          <td mat-cell *matCellDef="let element"> {{ utils.formatDate(element.startDate)}} </td>
+        </ng-container>
+      
+        
+        <ng-container matColumnDef="runTime">
+          <th mat-header-cell *matHeaderCellDef>
+            <i class="fa-solid fa-clock"></i> Run Time </th>
+          <td mat-cell *matCellDef="let element"> {{element.runTime}} min</td>
+        </ng-container>
+
+        <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef>
+                <i class="fa-solid fa-ticket"></i> Actions </th>
+            <td mat-cell *matCellDef="let element"> 
+                <a mat-button [routerLink]="['/details/', element.movieId]" >
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Details
+                </a>
+
+                <a mat-button >
+                    <i class="fa-solid fa-cart-shopping"></i> Book Now
+                </a>
+            </td>
+          </ng-container>
+      
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+      
+</div>
+
+<app-loading *ngIf="!dataSource" />
+  

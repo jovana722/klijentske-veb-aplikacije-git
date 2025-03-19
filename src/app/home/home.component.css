@@ -2,3 +2,26 @@ img {
     width: 300px;  /* širina slike */
     height: auto;  /* visina se automatski prilagođava širini */
 }
+
+input {
+    width: 50%; /* Dovoljno veliko, ali ne preširoko */
+    padding: 15px;
+    font-size: 15px;
+    border: 2px solid #fff;
+    border-radius: 8px;
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    outline: none;
+  }
+  
+  input::placeholder {
+    color: #bbb;
+  }
+  
+  .search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+     /* Centriranje po visini ekrana */
+  }
