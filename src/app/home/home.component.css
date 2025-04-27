@@ -1,10 +1,10 @@
 img {
-    width: 300px;  /* širina slike */
-    height: auto;  /* visina se automatski prilagođava širini */
+    width: 300px;  
+    height: auto;  
 }
 
 input {
-    width: 50%; /* Dovoljno veliko, ali ne preširoko */
+    width: 50%; 
     padding: 15px;
     font-size: 15px;
     border: 2px solid #fff;
@@ -23,5 +23,9 @@ input {
     display: flex;
     justify-content: center;
     align-items: center;
-     /* Centriranje po visini ekrana */
+  
+  }
+
+  .description {
+    text-align: justify;
   }

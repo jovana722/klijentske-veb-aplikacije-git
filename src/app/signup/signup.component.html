@@ -1,0 +1,54 @@
+<body class="signup-page">
+    <mat-card class="auth-card">
+        <mat-card-header>
+            <h1>Kreiraj nalog</h1>
+        </mat-card-header>
+        <mat-card-content>
+            <div class="input-group">
+                <input type="email" matInput [(ngModel)]="email" placeholder=" " required>
+                <label>Email</label>
+            </div>
+            <div class="input-group">
+                <input type="text" matInput [(ngModel)]="firstName" placeholder=" " required>
+                <label>Ime</label>
+            </div>
+            <div class="input-group">
+                <input type="text" matInput [(ngModel)]="lastName" placeholder=" " required>
+                <label>Prezime</label>
+            </div>
+            <div class="input-group">
+                <input type="tel" matInput [(ngModel)]="phone" placeholder=" " required>
+                <label>Telefon</label>
+            </div>
+            <div class="input-group">
+                <input type="text" matInput [(ngModel)]="address" placeholder=" " required>
+                <label>Adresa</label>
+            </div>
+            <div class="input-group">
+                <input type="password" matInput [(ngModel)]="password" placeholder=" " required>
+                <label>Lozinka</label>
+            </div>
+            <div class="input-group">
+                <input type="password" matInput [(ngModel)]="repeatPassword" placeholder=" " required>
+                <label>Ponovite lozinku</label>
+            </div>
+            <div class="input-group">
+                <select matInput [(ngModel)]="genre" required >
+                    
+                    <option *ngFor="let genre of genreList" [value]="genre">{{genre}}</option>
+                </select>
+                <label >Omiljeni žanr</label>
+            </div>
+            <div class="input-group">
+                <select matInput [(ngModel)]="cinema" required>
+                    <option *ngFor="let cin of cinemaList" [value]="cin">{{cin}}</option>
+                </select>
+                <label  >Omiljeni bioskop</label>
+            </div>
+        </mat-card-content>
+        <mat-card-actions>
+            <button type="button" mat-button class="btn" (click)="doSignup()">Nastavi</button>
+            <a mat-button class="btn" routerLink="/login">Već imam nalog</a>
+        </mat-card-actions>
+    </mat-card>
+</body>

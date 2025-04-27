@@ -3,16 +3,33 @@
     <span class="spacer"></span>
     
     <a routerLink="/" mat-button>
-        <i class="fa-solid fa-house"></i> Home
+        <i class="fa-solid fa-house"></i> 
+        <span class="link-name">  Početna</span>
     </a>    
     <a routerLink="/search" mat-button>
-        <i class="fa-solid fa-search"></i> Search
+        <i class="fa-solid fa-search"></i> 
+        <span class="link-name">  Pretraga</span>
     </a>
     <a routerLink="/cinemas" mat-button>
-        <i class="fa-solid fa-location-dot"></i> Cinema
+        <i class="fa-solid fa-location-dot"></i>
+        <span class="link-name">  Bioskopi</span> 
     </a>
-    <a routerLink="/about" mat-button>
-        <i class="fa-solid fa-circle-info"></i> About
+    <a routerLink="/login" mat-button *ngIf="!service.getActiveUser()">
+        <i class="fa-solid fa-right-to-bracket"></i> 
+        <span class="link-name">  Prijavi se</span>
+    </a>
+
+    <a routerLink="/user" mat-button *ngIf="service.getActiveUser()">
+        <i class="fa-solid fa-user"></i> 
+        <span class="link-name">  Profil</span>
+    </a>
+    <button mat-button *ngIf="service.getActiveUser()" (click)="doLogout()">
+        <i class="fa-solid fa-right-from-bracket"></i>
+        <span class="link-name">  Izloguj se</span>
+    </button>
+    <a routerLink="/about" mat-button class="about-btn">
+        <i class="fa-solid fa-circle-info"></i>
+        <span class="link-name">  O nama</span> 
     </a>
 
 </mat-toolbar>

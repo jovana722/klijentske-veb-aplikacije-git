@@ -1,0 +1,123 @@
+body.signup-page {
+    background-image: url('/assets/images/movie.jpg');
+    background-position: center;
+    background-origin: content-box;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    font-family: 'Noto Sans', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 92%;
+}
+
+.auth-card {
+    background-color: rgba(16, 15, 15, 0.8);
+    border-radius: 5px;
+    padding: 10px;
+    color: white;
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+    margin-top: 5px;
+    
+}
+
+h1 {
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 25px;
+    width: 100%;
+}
+
+.input-group label {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    font-size: 14px;
+    color: white;
+    transition: all 0.3s ease-in-out;
+    pointer-events: none;
+}
+
+/* Input polja */
+.input-group input {
+    border: none;
+    border-bottom: 1px solid #555;
+    background: transparent;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    color: white;
+    outline: none;
+}
+
+.input-group input:focus {
+    border-bottom: 1px solid #e74c3c;
+}
+
+/* Kada korisnik klikne ili unese tekst, labela ide gore */
+.input-group input:focus ~ label,
+.input-group input:not(:placeholder-shown) ~ label {
+    top: -12px;
+    font-size: 12px;
+    color: white;
+}
+
+/* Select polja */
+.input-group select {
+    width: 100%;
+    background: rgba(16, 15, 15, 0.8);
+    color: white;
+    padding: 8px;
+    font-size: 14px;
+    border-radius: 4px;
+    border: none;
+    border-bottom: 1px solid #555;
+    appearance: none;
+    cursor: pointer;
+}
+
+
+/* Kada korisnik izabere opciju u select-u, border postaje crven */
+.input-group select:focus,
+.input-group select:valid {
+    border-bottom: 1px solid #e74c3c;
+}
+
+/* Labele za select se ponašaju isto kao i za input polja */
+.input-group select:focus ~ label,
+.input-group select:not([value=""]) ~ label {
+    top: -12px;
+    font-size: 12px;
+    color: white;
+}
+
+
+.btn {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    text-transform: uppercase;
+    font-size: 13px;
+    margin-top: 30px;
+    margin-right: 20px;
+    border-radius: 4px;
+    width: 100%;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #c0392b;
+}

@@ -1,0 +1,36 @@
+.order-card {
+    max-width: 800px;
+    min-width: 400px;
+    margin: 30px auto;
+    padding: 16px;
+}
+
+.order-content {
+    display: flex; 
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.order-content img {
+    width: 400px; 
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.button-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: right;
+}
+
+
+
+

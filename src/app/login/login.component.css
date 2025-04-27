@@ -1,86 +1,140 @@
-.auth-card {
-    width: 100%;
-    max-width: 600px; /* Povećana širina kartice za prijavu */
-    margin: 50px auto;
-    background-color: #242728; /* Tamno siva pozadina kao pozadina stranice */
-    color: white;
-    padding: 40px;
-    border-radius: 8px;
-    border: 1px solid #000; /* Crne ivice */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+body.login-page {
+  background-image: url('/assets/images/cinema.jpg'); 
+  background-size: cover;
+  background-attachment: fixed;
+  color: white;
+  font-family: 'Noto Sans', sans-serif;
+  height: 92%;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
 }
 
-/* Centering the header text */
+
+.auth-card {
+  height: 400px;
+  width: 100%;
+  max-width: 500px;
+  margin: 0;
+  background-color: rgba(0, 0, 0, 0.8); 
+  padding: 30px 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+    
+h1 {
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+
 .mat-card-header {
-    text-align: center;
-    margin-bottom: 20px;
-    color: white;
+  text-align: center;
+  margin-bottom: 10px;
 }
 
 .mat-card-header h1 {
-    font-size: 28px;
-    font-weight: bold;
-    margin: 0;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
 }
 
-/* Form field styles */
-.mat-form-field {
-    width: 100%; /* Polja za unos zauzimaju celu širinu kartice */
-    margin-bottom: 20px; /* Razmak između polja */
-    background-color: transparent; /* Bez pozadine za inpute */
-    border-radius: 4px;
-    padding: 5px 0; /* Malo paddinga za bolji izgled */
-    display: block;
+
+.input-container {
+  position: relative;
+  margin-bottom: 25px;
 }
 
-/* Input field styles */
-.inputclass {
-    width: 100%; /* Širina inputa je 100% širine kartice */
-    padding: 14px; /* Povećan padding za udobniji unos */
-    background-color: #333; /* Tamnija pozadina za unos */
-    color: white;
-    border: 1px solid #444; /* Blagi okvir oko inputa */
-    border-radius: 4px;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
+.input-container label {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  font-size: 16px;
+  color: white;
+  pointer-events: none;
+  transition: all 0.5s ease-in-out;
 }
 
-.inputclass:focus {
-    background-color: #444; /* Promena boje pozadine kada je input fokusiran */
-    border-color: #007BFF; /* Promena boje ivice na plavu kada je fokus */
+
+.input-container input {
+  border: 0;
+  border-bottom: 1px solid #555;
+  background: transparent;
+  width: 100%;
+  padding: 8px 0 5px 0;
+  font-size: 16px;
+  color: white;
+  caret-color: white; 
 }
 
-/* Button Styles */
-.mat-button {
-    background-color: #007BFF; /* Plavi dugme */
-    color: white;
-    width: 100%; /* Dugme na celoj širini kartice */
-    border-radius: 4px;
-    padding: 12px;
-    font-weight: bold;
-    margin-top: 20px;
-    transition: background-color 0.3s ease;
+
+
+.input-container input:focus {
+  outline: none;
+  border-bottom: 1px solid #e74c3c;
+  background: transparent; 
 }
 
-.mat-button:hover {
-    background-color: #0056b3; /* Tamniji plavi kada se pređe preko */
+.input-container input:focus ~ label,
+.input-container input:valid ~ label {
+  top: -12px;
+  font-size: 12px;
+  color: white;
 }
 
-/* Links styling */
+.btn {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  text-transform: uppercase;
+  font-size: 13px;
+  margin-top: 30px;
+  margin-right: 20px;
+  border-radius: 4px;
+  width: 100%;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #c0392b;
+}
+
 .mat-card-actions a {
-    display: block;
-    text-align: center;
-    margin-top: 10px;
-    color: #007BFF;
-    text-decoration: none;
-    font-weight: bold;
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+  color: #007BFF;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 .mat-card-actions a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
-/* Form layout */
 .mat-form-field-label {
-    color: white;
+  color: white;
+}
+
+.input-container input:-webkit-autofill,
+.input-container input:-webkit-autofill:hover, 
+.input-container input:-webkit-autofill:focus, 
+.input-container input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s !important; 
+    -webkit-text-fill-color: white !important;
+    color: white !important;
+}
+
+
+.input-container input[data-autocompleted] {
+    background: transparent !important;
+    -webkit-text-fill-color: white !important;
+    color: white !important;
 }

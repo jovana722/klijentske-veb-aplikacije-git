@@ -3,5 +3,6 @@ export interface CinemaModel {
     name: string,
     location: string,
     workTime: string,
-    phone: string
+    phone: string,
+    mapUrl: string;
 }

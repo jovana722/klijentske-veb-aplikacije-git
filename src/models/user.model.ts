@@ -6,7 +6,9 @@ export interface UserModel {
     lastName: string
     phone: string
     address: string
-    favouriteDestination: string
+    favouriteGenre: string
+    favouriteActor: string
+    favouriteCinema: string
     password: string
     orders: OrderModel[]
 }

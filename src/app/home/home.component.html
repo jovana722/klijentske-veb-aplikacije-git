@@ -2,14 +2,14 @@
     <mat-card class="loading" appearance="outlined">
        
         <mat-card-content>
-            <h1>Oops, an error occured!</h1>
+            <h1>Ups, došlo je do greške!</h1>
             <p style="color: red;">{{error}}</p>
         </mat-card-content>
     </mat-card>
 </div>
 
 <div class="search-container">
-  <input type="text" (input)="onSearchChanged($event)" placeholder="Search movies...">
+  <input type="text" (input)="onSearchChanged($event)" placeholder="Pretražite filmove...">
 </div>
 
 
@@ -20,8 +20,8 @@
       <mat-card-content>
         <h1>{{ movie.title }}</h1>
         
-        <p>{{ movie.shortDescription }}</p>
-        <p>Release Date: {{ utils.formatDate(movie.startDate)}}</p>
+        <p class="description">{{ movie.shortDescription }}</p>
+        <p>Početak prikazivanja: {{ utils.formatDate(movie.startDate)}}</p>
 
 
         
@@ -29,10 +29,10 @@
       </mat-card-content>
       <mat-card-actions>
         <a mat-button [routerLink]="['/details/', movie.movieId]">
-          <i class="fa-solid fa-arrow-up-right-from-square"></i> Details
+          <i class="fa-solid fa-arrow-up-right-from-square"></i> Detalji o filmu
       </a>
-      <a mat-button >
-          <i class="fa-solid fa-cart-shopping"></i> Book Now
+      <a mat-button [routerLink]="['/details/'+movie.movieId+'/order']">
+          <i class="fa-solid fa-cart-shopping"></i> Rezerviši kartu
       </a>
       </mat-card-actions>
     </mat-card>

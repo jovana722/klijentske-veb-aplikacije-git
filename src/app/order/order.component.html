@@ -1,0 +1,58 @@
+<div *ngIf="movie">
+    <mat-card class="order-card" appearance="outlined">
+        <div class="order-content">
+          
+            <img mat-card-image [src]="movie.poster" [alt]="movie.title">
+
+            >
+            <mat-card-content class="content">
+                <h3>Film - {{movie.title}}</h3>
+
+                <mat-form-field class="full-width">
+                    <mat-label>Originalni naslov</mat-label>
+                    <input type="text" matInput [value]="movie.originalTitle" disabled>
+                </mat-form-field>
+
+                <mat-form-field class="full-width" *ngIf="movie?.movieGenres?.length">
+                    <mat-label>Žanr</mat-label>
+                    <input type="text" matInput [value]="movieGenres" disabled>
+                </mat-form-field>
+
+                <mat-form-field class="full-width">
+                    <mat-label>Početak prikazivanja</mat-label>
+                    <input type="text" matInput [value]="utils.formatDate(movie.startDate)" disabled>
+                </mat-form-field>
+
+                <mat-form-field class="full-width">
+                    <mat-label>Bioskop</mat-label>
+                    <mat-select [(ngModel)]="selectedCinema">
+                        <mat-option *ngFor="let cinema of cinemas" [value]="cinema.id">{{cinema.name}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field class="full-width">
+                    <mat-label>Izaberi cenu</mat-label>
+                    <mat-select [(ngModel)]="selectedPrice">
+                        <mat-option [value]="6">Standardno sedište - 6&euro;</mat-option>
+                        <mat-option [value]="10">Premium sedište - 10&euro;</mat-option>
+                        <mat-option [value]="15">VIP sedište - 15&euro;</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field class="full-width">
+                    <mat-label>Broj karata</mat-label>
+                    <input type="number" matInput [(ngModel)]="selectedTicketCount"> 
+                </mat-form-field>
+
+                
+                <div class="button-container">
+                    <button mat-button (click)="doOrder()">
+                        <i class="fa-solid fa-ticket"></i> Rezerviši
+                    </button>
+                </div>
+
+            </mat-card-content>
+        </div>
+    </mat-card>
+</div>
+

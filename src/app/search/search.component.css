@@ -1,0 +1,48 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    text-align: left;
+    padding: 10px;
+    font-weight: bold;
+    color: white;
+}
+
+th i {
+    margin-right: 5px; 
+}
+
+td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+
+
+.search-card {
+    background: transparent;
+}
+
+.search-input-row {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    gap: 15px; 
+    flex-wrap: nowrap;
+    width: 200px; 
+}
+
+.search-input {
+    min-width: 100px;
+}
+
+.search-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+
+
